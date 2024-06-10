@@ -19,7 +19,7 @@ namespace engine
       Vector3(float argX, float argY, float argZ) : x(argX), y(argY), z(argZ) {}
 
       void add(float argX, float argY, float argZ);
-      void subtract(float argX, float argY, float argZ)
+      void subtract(float argX, float argY, float argZ);
   };
 }
 

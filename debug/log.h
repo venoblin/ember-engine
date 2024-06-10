@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-namespace dev_tools 
+namespace debug
 {
   class Log
   {

@@ -18,7 +18,9 @@ namespace engine
       // Constructor with arguments 
       Vector3(float argX, float argY, float argZ) : x(argX), y(argY), z(argZ) {}
 
+      // Adds to the Vector
       void add(float argX, float argY, float argZ);
+      // Subtracts from the Vector
       void subtract(float argX, float argY, float argZ);
   };
 }

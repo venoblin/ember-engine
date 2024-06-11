@@ -1,8 +1,8 @@
-#include "include/vector3.h"
+#include "../include/vector3.h"
 
 namespace engine
 {
-  struct Vector3
+  class Vector3
   {
     public:
       float x;

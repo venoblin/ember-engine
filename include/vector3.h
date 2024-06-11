@@ -6,7 +6,7 @@ namespace engine
   /**
   * Vector3 data structure with x, y, and z coordinates
   */
-  struct Vector3
+  class Vector3
   {
     public:
       float x;

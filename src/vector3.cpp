@@ -1,6 +1,6 @@
 #include "../include/vector3.h"
 
-namespace engine
+namespace Engine
 {
   class Vector3
   {

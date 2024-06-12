@@ -1,7 +1,7 @@
 #ifndef VECTOR3_H
 #define VECTOR3_H
 
-namespace engine
+namespace Engine
 {
   /**
   * Vector3 data structure with x, y, and z coordinates

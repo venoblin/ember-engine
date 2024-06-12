@@ -2,51 +2,44 @@
 
 namespace Engine
 {
-  class Vector3
+  Vector3::Vector3() : x_(0.0f), y_(0.0f), z_(0.0f) {}
+  Vector3::Vector3(float x, float y, float z) : x_(x), y_(y), z_(z) {}
+
+  void Vector3::Vector3::add(float x, float y, float z) 
   {
-    private:
-      float x;
-      float y;
-      float z;
-    
-    public:
-      void add(float x, float y, float z) 
-      {
-        this->x += x;
-        this->y += y;
-        this->z += z;
-      }
-      void subtract(float x, float y, float z) 
-      {
-        this->x -= x;
-        this->y -= y;
-        this->z -= z;
-      }
-
-      void setX(float x)
-      {
-        this->x = x;
-      }
-      void setY(float y)
-      {
-        this->y = y;
-      }
-      void setZ(float z)
-      {
-        this->z = z;
-      }
-
-      float getX() 
-      {
-        return this->x;
-      }
-      float getY() 
-      {
-        return this->y;
-      }
-      float getZ() 
-      {
-        return this->z;
-      }
-  };
+    x_ += x;
+    y_ += y;
+    z_ += z;
+  }
+  void Vector3::Vector3::subtract(float x, float y, float z) 
+  {
+    x_ -= x;
+    y_ -= y;
+    z_ -= z;
+  }
+  void Vector3::Vector3::setX(float x)
+  {
+    x_ = x;
+  }
+  void Vector3::Vector3::setY(float y)
+  {
+    y_ = y;
+  }
+  void Vector3::Vector3::setZ(float z)
+  {
+    z_ = z;
+  }
+  float Vector3::Vector3::getX() 
+  {
+    return x_;
+  }
+  float Vector3::Vector3::getY() 
+  {
+    return y_;
+  }
+  float Vector3::Vector3::getZ() 
+  {
+    return z_;
+  }
 }
+  

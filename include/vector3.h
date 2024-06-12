@@ -9,20 +9,20 @@ namespace Engine
   class Vector3
   {
     private:
-      float x;
-      float y;
-      float z;
+      float x_;
+      float y_;
+      float z_;
 
     public:
-      Vector3() : x(0.0f), y(0.0f), z(0.0f) {}
-      Vector3(float argX, float argY, float argZ) : x(argX), y(argY), z(argZ) {}
+      Vector3() : x_(0.0f), y_(0.0f), z_(0.0f) {}
+      Vector3(float x, float y, float z) : x_(x), y_(y), z_(z) {}
 
-      void add(float argX, float argY, float argZ);
-      void subtract(float argX, float argY, float argZ);
+      void add(float x, float y, float z);
+      void subtract(float x, float y, float z);
     
-      void setX(float argX);
-      void setY(float argY);
-      void setZ(float argZ);
+      void setX(float x);
+      void setY(float y);
+      void setZ(float z);
 
       float getX();
       float getY();

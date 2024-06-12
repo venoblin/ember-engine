@@ -14,8 +14,8 @@ namespace Engine
       float z_;
 
     public:
-      Vector3() : x_(0.0f), y_(0.0f), z_(0.0f) {}
-      Vector3(float x, float y, float z) : x_(x), y_(y), z_(z) {}
+      Vector3();
+      Vector3(float x, float y, float z);
 
       void add(float x, float y, float z);
       void subtract(float x, float y, float z);

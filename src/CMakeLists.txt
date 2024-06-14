@@ -1,4 +1,5 @@
 add_library(
-  main.cpp 
+  engine STATIC
+  main.cpp
   vector3.cpp
 )

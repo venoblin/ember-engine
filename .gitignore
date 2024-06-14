@@ -5,3 +5,4 @@ CMakeFiles/
 CMakeScripts/
 *.cmake
 Makefile
+libSOURCE_DIR.a

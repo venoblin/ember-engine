@@ -6,4 +6,6 @@ if ! [ -d "build" ]; then
 fi
 
 # Builds project
-g++ -o build/engine src/main.cpp src/vector3.cpp
+# g++ -o build/engine src/main.cpp src/vector3.cpp
+cmake .
+make

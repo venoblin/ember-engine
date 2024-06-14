@@ -2,7 +2,7 @@
 
 Engine::Vector3::Vector3(float x, float y, float z) : x_(x), y_(y), z_(z) {}
 
- void Engine::Vector3::Vector3::add(float x, float y, float z) 
+void Engine::Vector3::Vector3::add(float x, float y, float z) 
 {
   x_ += x;
   y_ += y;
@@ -38,5 +38,3 @@ float Engine::Vector3::Vector3::getZ()
 {
   return z_;
 }
-
- 

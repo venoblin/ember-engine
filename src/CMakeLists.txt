@@ -1,5 +1,4 @@
-add_library(
-  engine STATIC
+add_executable(engine
   main.cpp
   vector3.cpp
 )

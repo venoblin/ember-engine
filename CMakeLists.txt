@@ -7,10 +7,5 @@ project(
   LANGUAGES CXX
 )
 
-find_package(wxWidgets REQUIRED)
-
-include_directories(${wxWidgets_INCLUDE_DIRS})
-
 add_subdirectory("src")
 
-target_link_libraries(engine PRIVATE ${wxWidgets_LIBRARIES})

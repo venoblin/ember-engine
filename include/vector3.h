@@ -14,7 +14,7 @@ namespace Engine
       float z_;
 
     public:
-      Vector3() = default;
+      Vector3();
       Vector3(float x, float y, float z);
 
       void add(float x, float y, float z);

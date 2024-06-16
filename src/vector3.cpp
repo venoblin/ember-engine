@@ -1,41 +1,43 @@
 #include "../include/vector3.h"
 
-Engine::Vector3::Vector3() : x_(0.0f), y_(0.0f), z_(0.0f) {}
-Engine::Vector3::Vector3(float x, float y, float z) : x_(x), y_(y), z_(z) {}
+using namespace Engine;
 
-void Engine::Vector3::Vector3::add(float x, float y, float z) 
+Vector3::Vector3() : x_(0.0f), y_(0.0f), z_(0.0f) {}
+Vector3::Vector3(float x, float y, float z) : x_(x), y_(y), z_(z) {}
+
+void Vector3::add(float x, float y, float z) 
 {
   x_ += x;
   y_ += y;
   z_ += z;
 }
-void Engine::Vector3::Vector3::subtract(float x, float y, float z) 
+void Vector3::subtract(float x, float y, float z) 
 {
   x_ -= x;
   y_ -= y;
   z_ -= z;
 }
-void Engine::Vector3::Vector3::setX(float x)
+void Vector3::setX(float x)
 {
   x_ = x;
 }
-void Engine::Vector3::Vector3::setY(float y)
+void Vector3::setY(float y)
 {
   y_ = y;
 }
-void Engine::Vector3::Vector3::setZ(float z)
+void Vector3::setZ(float z)
 {
   z_ = z;
 }
-float Engine::Vector3::Vector3::getX() 
+float Vector3::getX() 
 {
   return x_;
 }
-float Engine::Vector3::Vector3::getY() 
+float Vector3::getY() 
 {
   return y_;
 }
-float Engine::Vector3::Vector3::getZ() 
+float Vector3::getZ() 
 {
   return z_;
 }

@@ -14,7 +14,7 @@ namespace Engine
       void run();
       void stop();
       void setIsRunning(bool b);
-  }
+  };
 }
 
 #endif

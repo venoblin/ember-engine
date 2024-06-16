@@ -1,9 +1,9 @@
-#include "../include/game.h"
+#include "../include/app.h"
 
 int main()
 {
-  Engine::Game game;
-  game.run();
+  Engine::App app;
+  app.run();
 
   return 0;
 }

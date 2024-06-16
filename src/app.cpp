@@ -1,11 +1,11 @@
-#include "../include/game.h"
+#include "../include/app.h"
 #include <iostream>
 
 using namespace Engine;
 
-Game::Game() : _isRunning(false) {}
+App::App() : _isRunning(false) {}
 
-void Game::run()
+void App::run()
 {
   setIsRunning(true);
   
@@ -15,12 +15,12 @@ void Game::run()
   }
 }
 
-void Game::stop()
+void App::stop()
 {
   std::cout << "Stopped" << std::endl;
 }
 
-void Game::setIsRunning(bool b)
+void App::setIsRunning(bool b)
 {
   _isRunning = b;
 }

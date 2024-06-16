@@ -1,15 +1,15 @@
-#ifndef GAME_H
-#define GAME_H
+#ifndef APP_H
+#define APP_H
 
 namespace Engine
 {
-  class Game
+  class App
   {
     private:
       bool _isRunning;
     
     public:
-      Game();
+      App();
 
       void run();
       void stop();

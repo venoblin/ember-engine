@@ -1,5 +1,5 @@
 add_executable(engine
   main.cpp
   vector3.cpp
-  game.cpp
+  app.cpp
 )

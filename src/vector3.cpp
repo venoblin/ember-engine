@@ -1,4 +1,4 @@
-#include "../include/vector3.h"
+#include "vector3.h"
 
 using namespace Engine;
 

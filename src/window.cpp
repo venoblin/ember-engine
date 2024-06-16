@@ -1,5 +1,5 @@
-#include "../include/window.h"
-#include "../include/mainFrame.h"
+#include "window.h"
+#include "mainFrame.h"
 
 using namespace Ui;
 

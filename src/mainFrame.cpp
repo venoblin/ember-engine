@@ -1,4 +1,4 @@
-#include "../include/mainFrame.h"
+#include "mainFrame.h"
 
 using namespace Ui;
 

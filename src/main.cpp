@@ -1,3 +1,3 @@
-#include "../include/window.h"
+#include "window.h"
 
 wxIMPLEMENT_APP(Ui::Window);

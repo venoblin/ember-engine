@@ -3,3 +3,5 @@ add_executable(engine
   vector3.cpp
   app.cpp
 )
+
+target_link_libraries(engine PRIVATE ${wxWidgets_LIBRARIES})

@@ -7,6 +7,9 @@ project(
   LANGUAGES CXX
 )
 
+find_package(wxWidgets REQUIRED COMPONENTS core net base)
+include(${wxWidgets_USE_FILE})
+
 add_subdirectory("src")
 
 

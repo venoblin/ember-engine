@@ -6,15 +6,14 @@ namespace Engine
   class Game
   {
     private:
-      bool _isRunning;
+      bool _isRunning = false;
     
     public:
       Game();
 
       void run();
       void stop();
-
-      bool isRunning();
+      void setIsRunning(bool b);
   }
 }
 

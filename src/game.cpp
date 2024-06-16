@@ -1,7 +1,7 @@
 #include "../include/game.h"
 #include <iostream>
 
-Engine::Game::Game() {}
+Engine::Game::Game() : _isRunning(false) {}
 
 void Engine::Game::Game::run()
 {

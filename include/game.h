@@ -6,7 +6,7 @@ namespace Engine
   class Game
   {
     private:
-      bool _isRunning = false;
+      bool _isRunning;
     
     public:
       Game();

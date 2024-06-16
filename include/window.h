@@ -8,8 +8,8 @@ namespace Ui
   class Window : public wxApp 
   {
     public:
-      bool onInit(override);
-  }
+      bool OnInit() override;
+  };
 }
 
 #endif

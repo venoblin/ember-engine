@@ -14,7 +14,7 @@ namespace Ui
       void onHello(wxCommandEvent& event);
       void onExit(wxCommandEvent& event);
       void onAbout(wxCommandEvent& event);
-  }
+  };
 }
 
 #endif

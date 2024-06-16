@@ -1,9 +1,3 @@
-#include "../include/app.h"
+#include "../include/window.h"
 
-int main()
-{
-  Engine::App app;
-  app.run();
-
-  return 0;
-}
+wxIMPLEMENT_APP(Ui::Window);

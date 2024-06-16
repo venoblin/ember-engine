@@ -3,9 +3,6 @@
 
 namespace Engine
 {
-  /**
-  * Vector3 data structure with x, y, and z coordinates
-  */
   class Vector3
   {
     private:

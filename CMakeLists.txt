@@ -7,9 +7,9 @@ project(
   LANGUAGES CXX
 )
 
-find_package(wxWidgets REQUIRED COMPONENTS core net base)
+find_package(SDL2 REQUIRED)
 
-include(${wxWidgets_USE_FILE})
+include_directories(${SDL2_INCLUDE_DIRS})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 add_subdirectory("src")

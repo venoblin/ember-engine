@@ -1,3 +1,5 @@
-#include "window.h"
 
-wxIMPLEMENT_APP(Ui::Window);
+int main()
+{
+  return 0;
+}

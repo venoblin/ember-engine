@@ -6,4 +6,4 @@ add_executable(engine
   mainFrame.cpp
 )
 
-target_link_libraries(engine PRIVATE ${wxWidgets_LIBRARIES})
+target_link_libraries(engine SDL2main SDL2)

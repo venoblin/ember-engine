@@ -1,24 +1,19 @@
+#include "window.h"
 #include <SDL2/SDL.h>
 
 int main()
 {
-  SDL_Window* window = SDL_CreateWindow(
-    "Game Engine", 
-    SDL_WINDOWPOS_UNDEFINED, 
-    SDL_WINDOWPOS_UNDEFINED, 
-    640, 480, 
-    SDL_WINDOW_SHOWN
-  );
+  Ui::Window window;
 
-  if (window == nullptr) {
+  if (window.getWindow() == nullptr) {
     SDL_Log("Window could not be created! SDL Error: %s", SDL_GetError());
     SDL_Quit();
     return 1;
   }
 
-  SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+  SDL_Renderer* renderer = SDL_CreateRenderer(window.getWindow(), -1, SDL_RENDERER_ACCELERATED);
   if (renderer == nullptr) {
-    SDL_DestroyWindow(window);
+    SDL_DestroyWindow(window.getWindow());
     SDL_Quit();
     return 1;
   }
@@ -34,7 +29,7 @@ int main()
   }
 
   SDL_DestroyRenderer(renderer);
-  SDL_DestroyWindow(window);
+  SDL_DestroyWindow(window.getWindow());
   SDL_Quit();
 
   return 0;

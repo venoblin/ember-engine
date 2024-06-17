@@ -9,13 +9,18 @@ namespace Ui
   class Window
   {
     private:
-      std::string _title;
+      const char* _title;
       int _width;
       int _height;
+      SDL_Window* _window;
+
+      void setupWindow();
     
     public:
       Window();
-      Window(std::string title, int width, int height);
+      Window(const char* title, int width, int height);
+
+      SDL_Window* getWindow();
   };
 }
 

@@ -30,7 +30,6 @@ int Window::run()
     return 1;
   }
 
-
   bool quit = false;
   SDL_Event event;
   while (!quit) {
@@ -41,8 +40,9 @@ int Window::run()
     }
 
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-
     SDL_RenderClear(renderer);
+
+    // Draw shapes here
 
     SDL_RenderPresent(renderer);
   }

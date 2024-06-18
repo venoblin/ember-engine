@@ -30,6 +30,7 @@ int Window::run()
     return 1;
   }
 
+
   bool quit = false;
   SDL_Event event;
   while (!quit) {
@@ -38,6 +39,12 @@ int Window::run()
         quit = true;
       }
     }
+
+    SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+
+    SDL_RenderClear(renderer);
+
+    SDL_RenderPresent(renderer);
   }
 
   SDL_DestroyRenderer(renderer);

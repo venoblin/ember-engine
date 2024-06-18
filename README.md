@@ -3,4 +3,4 @@
 ## Requirements
 - cmake
 - make
-- wxWidgets
+- SDL2

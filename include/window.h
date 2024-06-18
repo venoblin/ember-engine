@@ -14,13 +14,11 @@ namespace Ui
       int _height;
       SDL_Window* _window;
 
-      void setupWindow();
-    
     public:
       Window();
       Window(const char* title, int width, int height);
 
-      SDL_Window* getWindow();
+      int run();
   };
 }
 

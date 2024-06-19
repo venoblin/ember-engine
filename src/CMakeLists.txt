@@ -1,8 +1,5 @@
-add_executable(engine
-  main.cpp
-  vector3.cpp
-  app.cpp
-  window.cpp
-)
+file(GLOB_RECURSE SOURCE_FILES "*.cpp")
+
+add_executable(engine ${SOURCE_FILES})
 
 target_link_libraries(engine SDL2main SDL2)

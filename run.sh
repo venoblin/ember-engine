@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./build/engine
+./build/game-engine

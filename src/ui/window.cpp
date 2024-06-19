@@ -4,6 +4,7 @@
 using namespace Ui;
 
 Window::Window() : _title("Undefined"), _width(640), _height(480) {}
+Window::Window(const char* title) : _title(title), _width(640), _height(480) {}
 Window::Window(const char* title, int width, int height) : _title(title), _width(width), _height(height) {}
 
 int Window::run()

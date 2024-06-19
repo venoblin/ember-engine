@@ -1,10 +1,10 @@
+#include "app.h"
 #include <SDL2/SDL.h>
-#include "window.h"
 
 int main()
 {
-  Ui::Window window;
-  window.run();
+  Engine::App app;
+  app.run();
 
   return 0;
 }

@@ -16,6 +16,7 @@ namespace Ui
 
     public:
       Window();
+      Window(const char* title);
       Window(const char* title, int width, int height);
 
       int run();

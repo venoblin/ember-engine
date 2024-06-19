@@ -7,6 +7,6 @@ fi
 cmake .
 make
 
-mv src/engine build
+mv src/game-engine build
 
 echo "Built project in build directory!"

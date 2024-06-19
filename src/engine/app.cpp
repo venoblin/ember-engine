@@ -1,4 +1,5 @@
 #include "app.h"
+#include "window.h"
 #include <iostream>
 
 using namespace Engine;
@@ -7,20 +8,8 @@ App::App() : _isRunning(false) {}
 
 void App::run()
 {
-  setIsRunning(true);
-  std::string answer;
-  
-  std::cout << "Running..." << std::endl;
-  
-  while (_isRunning)
-  {
-    std::cout << "(q) to quit" << std::endl;
-    std::cin >> answer;
-
-    if (answer == "q") {
-      stop();
-    }
-  }
+  Ui::Window window("Game Engine");
+  window.run();
 }
 
 void App::stop()

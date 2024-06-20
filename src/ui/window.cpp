@@ -32,7 +32,7 @@ int Window::run()
     return 1;
   }
 
-  SDL_Renderer* renderer = SDL_CreateRenderer(_window, -1, 0);
+  SDL_Renderer* renderer = SDL_CreateRenderer(_window, -1,  SDL_RENDERER_SOFTWARE);
   if (renderer == nullptr) 
   {
     SDL_DestroyWindow(_window);

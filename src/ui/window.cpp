@@ -52,7 +52,7 @@ int Window::run()
       }
     }
 
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
 
     SDL_Rect rectangle;
@@ -63,7 +63,7 @@ int Window::run()
     rectangle.w = 100;  
     rectangle.h = 100;  
 
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);  
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);  
 
     SDL_RenderDrawRect(renderer, &rectangle);  
 

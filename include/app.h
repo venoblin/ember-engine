@@ -11,7 +11,7 @@ namespace Engine
     public:
       App();
 
-      void run();
+      int run();
       void stop();
       void setIsRunning(bool b);
   };

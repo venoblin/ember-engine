@@ -6,10 +6,12 @@ using namespace Engine;
 
 App::App() : _isRunning(false) {}
 
-void App::run()
+int App::run()
 {
   Ui::Window window("Game Engine");
   window.run();
+
+  return 0;
 }
 
 void App::stop()

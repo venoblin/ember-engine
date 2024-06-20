@@ -1,5 +1,6 @@
 #include "window.h"
 #include <string>
+#include <iostream>
 
 using namespace Ui;
 
@@ -9,6 +10,12 @@ Window::Window(const char* title, int width, int height) : _title(title), _width
 
 int Window::run()
 {
+  if (SDL_Init(SDL_INIT_VIDEO) < 0) 
+  {
+    SDL_Log("SDL could not initialize! SDL Error: %s", SDL_GetError());
+    return 1;
+  }
+  
   _window = SDL_CreateWindow(
     _title, 
     SDL_WINDOWPOS_UNDEFINED, 
@@ -18,14 +25,16 @@ int Window::run()
     SDL_WINDOW_SHOWN
   );
 
-  if (_window == nullptr) {
+  if (_window == nullptr) 
+  {
     SDL_Log("Window could not be created! SDL Error: %s", SDL_GetError());
     SDL_Quit();
     return 1;
   }
 
-  SDL_Renderer* renderer = SDL_CreateRenderer(_window, -1, SDL_RENDERER_ACCELERATED);
-  if (renderer == nullptr) {
+  SDL_Renderer* renderer = SDL_CreateRenderer(_window, -1, 0);
+  if (renderer == nullptr) 
+  {
     SDL_DestroyWindow(_window);
     SDL_Quit();
     return 1;
@@ -33,22 +42,30 @@ int Window::run()
 
   bool quit = false;
   SDL_Event event;
-  while (!quit) {
-    while (SDL_PollEvent(&event)) {
-      if (event.type == SDL_QUIT) {
+  while (!quit) 
+  {
+    while (SDL_PollEvent(&event)) 
+    {
+      if (event.type == SDL_QUIT) 
+      {
         quit = true;
       }
     }
-    SDL_RenderClear(renderer);
-
-    SDL_Rect rect;
-    rect.x = 250;
-    rect.y = 150;
-    rect.w = 200;
-    rect.h = 200;
 
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_RenderFillRect(renderer, &rect);
+    SDL_RenderClear(renderer);
+
+    SDL_Rect rectangle;
+    int windowWidth, windowHeight;
+    SDL_GetWindowSize(_window, &windowWidth, &windowHeight);
+    rectangle.x = windowWidth / 2 - 50;  
+    rectangle.y = windowHeight / 2 - 50; 
+    rectangle.w = 100;  
+    rectangle.h = 100;  
+
+    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);  
+
+    SDL_RenderDrawRect(renderer, &rectangle);  
 
     SDL_RenderPresent(renderer);
   }

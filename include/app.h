@@ -1,19 +1,16 @@
 #ifndef APP_H
 #define APP_H
 
+#include "window.h"
+
 namespace Engine
 {
-  class App
-  {
-    private:
-      bool _isRunning;
-    
+  class App : public Ui::Window
+  { 
     public:
       App();
-
-      int run();
-      void stop();
-      void setIsRunning(bool b);
+      App(const char* title);
+      App(const char* title, int width, int height);
   };
 }
 

@@ -55,17 +55,7 @@ int Window::run()
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderClear(renderer);
 
-    SDL_Rect rectangle;
-    int windowWidth, windowHeight;
-    SDL_GetWindowSize(_window, &windowWidth, &windowHeight);
-    rectangle.x = windowWidth / 2 - 50;  
-    rectangle.y = windowHeight / 2 - 50; 
-    rectangle.w = 100;  
-    rectangle.h = 100;  
-
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);  
-
-    SDL_RenderDrawRect(renderer, &rectangle);  
+      
 
     SDL_RenderPresent(renderer);
   }

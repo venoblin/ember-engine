@@ -3,9 +3,8 @@
 
 int main()
 {
-  Engine::App* app = new Engine::App("Game Engine");
-  app->run();
+  Engine::App app("Game Engine");
+  app.run();
 
-  delete app;
   return 0;
 }

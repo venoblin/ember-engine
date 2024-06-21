@@ -20,6 +20,9 @@ namespace Ui
       Window(const char* title, int width, int height);
 
       int run();
+
+      virtual void start();
+      virtual void update();
   };
 }
 

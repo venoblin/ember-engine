@@ -11,6 +11,9 @@ namespace Engine
       App();
       App(const char* title);
       App(const char* title, int width, int height);
+
+      void start() override;
+      void update() override;
   };
 }
 

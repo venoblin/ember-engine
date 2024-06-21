@@ -40,6 +40,8 @@ int Window::run()
     return 1;
   }
 
+  Window::start();
+
   bool quit = false;
   SDL_Event event;
   while (!quit) 
@@ -54,7 +56,9 @@ int Window::run()
 
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
-    
+
+    Window::update();
+
     SDL_RenderPresent(renderer);
   }
 
@@ -64,3 +68,7 @@ int Window::run()
 
   return 0;
 }
+
+void Window::start() {}
+
+void Window::update() {}

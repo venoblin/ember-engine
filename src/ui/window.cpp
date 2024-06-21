@@ -16,7 +16,7 @@ int Window::run()
     return 1;
   }
   
-  SDL_Window* window = SDL_CreateWindow(
+  _window = SDL_CreateWindow(
     _title, 
     SDL_WINDOWPOS_UNDEFINED, 
     SDL_WINDOWPOS_UNDEFINED, 
@@ -25,22 +25,22 @@ int Window::run()
     SDL_WINDOW_SHOWN
   );
 
-  if (window == nullptr) 
+  if (_window == nullptr) 
   {
     SDL_Log("Window could not be created! SDL Error: %s", SDL_GetError());
     SDL_Quit();
     return 1;
   }
 
-  SDL_Renderer* renderer = SDL_CreateRenderer(window, -1,  SDL_RENDERER_SOFTWARE);
-  if (renderer == nullptr) 
+  _renderer = SDL_CreateRenderer(_window, -1,  SDL_RENDERER_SOFTWARE);
+  if (_renderer == nullptr) 
   {
-    SDL_DestroyWindow(window);
+    SDL_DestroyWindow(_window);
     SDL_Quit();
     return 1;
   }
 
-  Window::start(window, renderer);
+  Window::start();
 
   bool quit = false;
   SDL_Event event;
@@ -54,21 +54,21 @@ int Window::run()
       }
     }
 
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_RenderClear(renderer);
+    SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255);
+    SDL_RenderClear(_renderer);
 
-    Window::update(window, renderer);
+    Window::update();
 
-    SDL_RenderPresent(renderer);
+    SDL_RenderPresent(_renderer);
   }
 
-  SDL_DestroyRenderer(renderer);
-  SDL_DestroyWindow(window);
+  SDL_DestroyRenderer(_renderer);
+  SDL_DestroyWindow(_window);
   SDL_Quit();
 
   return 0;
 }
 
-void Window::start(SDL_Window* window, SDL_Renderer* renderer) {}
+void Window::start() {}
 
-void Window::update(SDL_Window* window, SDL_Renderer* renderer) {}
+void Window::update() {}

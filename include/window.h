@@ -8,10 +8,12 @@ namespace Ui
 {
   class Window
   {
-    private:
+    protected:
       const char* _title;
       int _width;
       int _height;
+      SDL_Window* _window;
+      SDL_Renderer* _renderer;
 
     public:
       Window();
@@ -20,8 +22,8 @@ namespace Ui
 
       int run();
 
-      virtual void start(SDL_Window* window, SDL_Renderer* renderer);
-      virtual void update(SDL_Window* window, SDL_Renderer* renderer);
+      virtual void start();
+      virtual void update();
   };
 }
 

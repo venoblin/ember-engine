@@ -16,8 +16,7 @@ int Window::run()
     SDL_Log("SDL could not initialize! SDL Error: %s", SDL_GetError());
     return 1;
   }
-  
-  _window = SDL_CreateWindow(
+  SDL_Window* window = SDL_CreateWindow(
     _title, 
     SDL_WINDOWPOS_UNDEFINED, 
     SDL_WINDOWPOS_UNDEFINED, 
@@ -26,23 +25,23 @@ int Window::run()
     SDL_WINDOW_SHOWN
   );
 
-  if (_window == nullptr) 
+  if (window == nullptr) 
   {
     SDL_Log("Window could not be created! SDL Error: %s", SDL_GetError());
     SDL_Quit();
     return 1;
   }
 
-  _renderer = SDL_CreateRenderer(_window, -1,  SDL_RENDERER_SOFTWARE);
-  if (_renderer == nullptr) 
+  SDL_Renderer* renderer = SDL_CreateRenderer(window, -1,  SDL_RENDERER_SOFTWARE);
+  if (renderer == nullptr) 
   {
-    SDL_DestroyWindow(_window);
+    SDL_DestroyWindow(window);
     SDL_Quit();
     return 1;
   }
 
   Engine::App* app = new Engine::App();
-  app->start();
+  app->start(window, renderer);
 
   bool quit = false;
   SDL_Event event;
@@ -56,22 +55,22 @@ int Window::run()
       }
     }
 
-    SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255);
-    SDL_RenderClear(_renderer);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_RenderClear(renderer);
 
-    app->update();
+    app->update(window, renderer);
 
-    SDL_RenderPresent(_renderer);
+    SDL_RenderPresent(renderer);
   }
   
   delete(app);
-  SDL_DestroyRenderer(_renderer);
-  SDL_DestroyWindow(_window);
+  SDL_DestroyRenderer(renderer);
+  SDL_DestroyWindow(window);
   SDL_Quit();
 
   return 0;
 }
 
-void Window::start() {}
+void Window::start(SDL_Window* window, SDL_Renderer* renderer) {}
 
-void Window::update() {}
+void Window::update(SDL_Window* window, SDL_Renderer* renderer) {}

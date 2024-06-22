@@ -20,3 +20,8 @@ void Collider::setUpRect()
   _rectangle.w = _width;  
   _rectangle.h = _height; 
 }
+
+SDL_Rect Collider::getRectangle()
+{
+  return _rectangle;
+}

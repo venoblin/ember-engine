@@ -32,8 +32,8 @@ int Window::run()
     return 1;
   }
 
-  SDL_Renderer* renderer = SDL_CreateRenderer(window, -1,  SDL_RENDERER_SOFTWARE);
-  if (renderer == nullptr) 
+  _renderer = SDL_CreateRenderer(window, -1,  SDL_RENDERER_SOFTWARE);
+  if (_renderer == nullptr) 
   {
     SDL_DestroyWindow(window);
     SDL_Quit();
@@ -41,7 +41,7 @@ int Window::run()
   }
 
   Engine::App* app = new Engine::App();
-  app->start(window, renderer);
+  app->start(window, _renderer);
 
   bool quit = false;
   SDL_Event event;
@@ -55,20 +55,26 @@ int Window::run()
       }
     }
 
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_RenderClear(renderer);
+    SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255);
+    SDL_RenderClear(_renderer);
 
-    app->update(window, renderer);
+    app->update(window, _renderer);
 
-    SDL_RenderPresent(renderer);
+    SDL_RenderPresent(_renderer);
   }
   
   delete(app);
-  SDL_DestroyRenderer(renderer);
+  SDL_DestroyRenderer(_renderer);
   SDL_DestroyWindow(window);
   SDL_Quit();
 
   return 0;
+}
+
+void Window::draw(SDL_Rect rectangle, float r, float g, float b, float a) 
+{
+  SDL_SetRenderDrawColor(_renderer, r, g, b, a);  
+  SDL_RenderDrawRect(_renderer, &rectangle);
 }
 
 void Window::start(SDL_Window* window, SDL_Renderer* renderer) {}

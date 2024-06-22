@@ -15,10 +15,12 @@ namespace Physics
       Math::Vector3 _position;
 
       void setUpRect();
-    
+
     public:
       Collider(float width, float height);
       Collider(float width, float height, Math::Vector3 position);
+
+      SDL_Rect getRectangle();
   };
 }
 

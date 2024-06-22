@@ -1,5 +1,6 @@
 #include "app.h"
 #include "window.h"
+#include "collider.h"
 #include <iostream>
 
 using namespace Engine;
@@ -18,7 +19,8 @@ void App::update(SDL_Window* window, SDL_Renderer* renderer)
   rectangle.x = windowWidth / 2 - 50;  
   rectangle.y = windowHeight / 2 - 50; 
   rectangle.w = 100;  
-  rectangle.h = 100;  
-  SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);  
-  SDL_RenderDrawRect(renderer, &rectangle); 
+  rectangle.h = 100; 
+  App::draw(rectangle, 255, 0, 0, 255);
+  // SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);  
+  // SDL_RenderDrawRect(renderer, &rect.getRectangle()); 
 }

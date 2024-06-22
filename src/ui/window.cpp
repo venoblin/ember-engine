@@ -71,10 +71,10 @@ int Window::run()
   return 0;
 }
 
-void Window::draw(SDL_Rect rectangle, float r, float g, float b, float a) 
+void Window::draw(const SDL_Rect rect, float r, float g, float b, float a) 
 {
   SDL_SetRenderDrawColor(_renderer, r, g, b, a);  
-  SDL_RenderDrawRect(_renderer, &rectangle);
+  SDL_RenderDrawRect(_renderer, &rect);
 }
 
 void Window::start(SDL_Window* window, SDL_Renderer* renderer) {}

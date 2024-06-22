@@ -20,7 +20,7 @@ namespace Ui
       Window(const char* title, int width, int height);
 
       int run();
-      void draw(SDL_Rect rect, float r, float g, float b, float a);
+      void draw(const SDL_Rect rect, float r, float g, float b, float a);
 
       virtual void start(SDL_Window* window, SDL_Renderer* renderer);
       virtual void update(SDL_Window* window, SDL_Renderer* renderer);

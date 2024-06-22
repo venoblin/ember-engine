@@ -22,5 +22,5 @@ void App::update(SDL_Window* window, SDL_Renderer* renderer)
   rectangle.h = 100; 
   App::draw(rectangle, 255, 0, 0, 255);
   // SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);  
-  // SDL_RenderDrawRect(renderer, &rect.getRectangle()); 
+  // SDL_RenderDrawRect(renderer, &rectangle); 
 }

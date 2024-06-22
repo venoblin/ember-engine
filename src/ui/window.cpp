@@ -1,4 +1,5 @@
 #include "window.h"
+#include "app.h"
 #include <string>
 #include <iostream>
 
@@ -40,7 +41,8 @@ int Window::run()
     return 1;
   }
 
-  Window::start();
+  Engine::App* app = new Engine::App();
+  app->start();
 
   bool quit = false;
   SDL_Event event;
@@ -57,11 +59,12 @@ int Window::run()
     SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255);
     SDL_RenderClear(_renderer);
 
-    Window::update();
+    app->update();
 
     SDL_RenderPresent(_renderer);
   }
-
+  
+  delete(app);
   SDL_DestroyRenderer(_renderer);
   SDL_DestroyWindow(_window);
   SDL_Quit();

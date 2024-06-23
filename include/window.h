@@ -8,15 +8,18 @@ namespace Ui
 {
   class Window
   {
+    private:
+      void setUpWindow();
+    
     protected:
+      SDL_Window* _window;
       SDL_Renderer* _renderer;
+      int _sdlInit;
       const char* _title;
       int _width;
       int _height;
 
     public:
-      Window();
-      Window(const char* title);
       Window(const char* title, int width, int height);
 
       int run();

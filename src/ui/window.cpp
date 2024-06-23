@@ -5,18 +5,16 @@
 
 using namespace Ui;
 
-Window::Window() : _title("Undefined"), _width(640), _height(480) {}
-Window::Window(const char* title) : _title(title), _width(640), _height(480) {}
-Window::Window(const char* title, int width, int height) : _title(title), _width(width), _height(height) {}
-
-int Window::run()
+Window::Window(const char* title, int width, int height) : _title(title), _width(width), _height(height) 
 {
-  if (SDL_Init(SDL_INIT_VIDEO) < 0) 
-  {
-    SDL_Log("SDL could not initialize! SDL Error: %s", SDL_GetError());
-    return 1;
-  }
-  SDL_Window* window = SDL_CreateWindow(
+  setUpWindow();
+}
+
+void Window::setUpWindow()
+{
+  _sdlInit = (SDL_INIT_VIDEO);
+  
+  _window = SDL_CreateWindow(
     _title, 
     SDL_WINDOWPOS_UNDEFINED, 
     SDL_WINDOWPOS_UNDEFINED, 
@@ -25,23 +23,33 @@ int Window::run()
     SDL_WINDOW_SHOWN
   );
 
-  if (window == nullptr) 
+  _renderer = SDL_CreateRenderer(_window, -1,  SDL_RENDERER_SOFTWARE);
+}
+
+int Window::run()
+{
+  if (_sdlInit < 0) 
+  {
+    SDL_Log("SDL could not initialize! SDL Error: %s", SDL_GetError());
+    return 1;
+  }
+
+  if (_window == nullptr) 
   {
     SDL_Log("Window could not be created! SDL Error: %s", SDL_GetError());
     SDL_Quit();
     return 1;
   }
 
-  _renderer = SDL_CreateRenderer(window, -1,  SDL_RENDERER_SOFTWARE);
   if (_renderer == nullptr) 
   {
-    SDL_DestroyWindow(window);
+    SDL_DestroyWindow(_window);
     SDL_Quit();
     return 1;
   }
-
-  Engine::App* app = new Engine::App();
-  app->start(window, _renderer);
+  
+  Engine::App* app = new Engine::App(_title, _width, _height);
+  app->start(_window, _renderer);
 
   bool quit = false;
   SDL_Event event;
@@ -58,14 +66,14 @@ int Window::run()
     SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255);
     SDL_RenderClear(_renderer);
 
-    app->update(window, _renderer);
+    app->update(_window, _renderer);
 
     SDL_RenderPresent(_renderer);
   }
   
   delete(app);
   SDL_DestroyRenderer(_renderer);
-  SDL_DestroyWindow(window);
+  SDL_DestroyWindow(_window);
   SDL_Quit();
 
   return 0;

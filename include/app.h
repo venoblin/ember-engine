@@ -8,8 +8,6 @@ namespace Engine
   class App : public Ui::Window
   { 
     public:
-      App();
-      App(const char* title);
       App(const char* title, int width, int height);
 
       void start(SDL_Window* window, SDL_Renderer* renderer) override;

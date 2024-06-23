@@ -3,6 +3,7 @@
 
 #include <SDL2/SDL.h>
 #include <string>
+#include <functional>
 
 namespace Ui 
 {
@@ -22,11 +23,11 @@ namespace Ui
     public:
       Window(const char* title, int width, int height);
 
-      int run();
+      int run(std::function<void()> start, std::function<void()> update);
       void draw(const SDL_Rect rect, float r, float g, float b, float a);
 
-      virtual void start(SDL_Window* window, SDL_Renderer* renderer);
-      virtual void update(SDL_Window* window, SDL_Renderer* renderer);
+      virtual void start();
+      virtual void update();
   };
 }
 

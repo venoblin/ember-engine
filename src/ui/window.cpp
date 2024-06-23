@@ -2,6 +2,7 @@
 #include "app.h"
 #include <string>
 #include <iostream>
+#include <functional>
 
 using namespace Ui;
 
@@ -26,7 +27,7 @@ void Window::setUpWindow()
   _renderer = SDL_CreateRenderer(_window, -1,  SDL_RENDERER_SOFTWARE);
 }
 
-int Window::run()
+int Window::run(std::function<void()> start, std::function<void()> update)
 {
   if (_sdlInit < 0) 
   {
@@ -48,8 +49,7 @@ int Window::run()
     return 1;
   }
   
-  Engine::App* app = new Engine::App(_title, _width, _height);
-  app->start(_window, _renderer);
+  start();
 
   bool quit = false;
   SDL_Event event;
@@ -66,12 +66,11 @@ int Window::run()
     SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255);
     SDL_RenderClear(_renderer);
 
-    app->update(_window, _renderer);
+    update();
 
     SDL_RenderPresent(_renderer);
   }
   
-  delete(app);
   SDL_DestroyRenderer(_renderer);
   SDL_DestroyWindow(_window);
   SDL_Quit();
@@ -85,6 +84,6 @@ void Window::draw(const SDL_Rect rect, float r, float g, float b, float a)
   SDL_RenderDrawRect(_renderer, &rect);
 }
 
-void Window::start(SDL_Window* window, SDL_Renderer* renderer) {}
+void Window::start() {}
 
-void Window::update(SDL_Window* window, SDL_Renderer* renderer) {}
+void Window::update() {}

@@ -26,8 +26,8 @@ namespace Ui
       int run(std::function<void()> start, std::function<void()> update);
       void draw(const SDL_Rect rect, float r, float g, float b, float a);
 
-      virtual void start();
-      virtual void update();
+      virtual std::function<void()> start();
+      virtual std::function<void()> update();
   };
 }
 

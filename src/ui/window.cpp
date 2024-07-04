@@ -84,6 +84,6 @@ void Window::draw(const SDL_Rect rect, float r, float g, float b, float a)
   SDL_RenderDrawRect(_renderer, &rect);
 }
 
-void Window::start() {}
+std::function<void()> Window::start() {}
 
-void Window::update() {}
+std::function<void()> Window::update() {}

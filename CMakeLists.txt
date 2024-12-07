@@ -7,3 +7,4 @@ project (
   LANGUAGES CXX
 )
 
+add_executable(EmberEngine src/main.cpp)

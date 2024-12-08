@@ -10,14 +10,12 @@ Object::Object(
   this->collider.h = height;
   this->collider.x = x;
   this->collider.y = y;
-  this->debugMode = false;
 }
 
 void Object::setSize(int width, int height) {
   this->width = width;
   this->height = height;
 }    
-
 void Object::setPosition(float x, float y, float z) {
   this->x = x;
   this->y = y;

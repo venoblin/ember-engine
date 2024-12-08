@@ -11,9 +11,11 @@ class Window {
     const char* title;
     int width;
     int height;
-    
+
   public:
     Window(const char* title, int width, int height);
+
+    int run();
 };
 
 #endif

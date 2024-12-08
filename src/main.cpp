@@ -17,24 +17,20 @@ int main() {
     height, 
     SDL_WINDOW_SHOWN
   );
-
   SDL_Renderer* renderer = SDL_CreateRenderer(window, -1,  SDL_RENDERER_SOFTWARE);
 
-  if (sdlInit < 0) 
-  {
+  if (sdlInit < 0) {
     SDL_Log("SDL could not initialize! SDL Error: %s", SDL_GetError());
     return 1;
   }
 
-  if (window == nullptr) 
-  {
+  if (window == nullptr) {
     SDL_Log("Window could not be created! SDL Error: %s", SDL_GetError());
     SDL_Quit();
     return 1;
   }
 
-  if (renderer == nullptr) 
-  {
+  if (renderer == nullptr) {
     SDL_DestroyWindow(window);
     SDL_Quit();
     return 1;
@@ -42,12 +38,9 @@ int main() {
   
   bool quit = false;
   SDL_Event event;
-  while (!quit) 
-  {
-    while (SDL_PollEvent(&event)) 
-    {
-      if (event.type == SDL_QUIT) 
-      {
+  while (!quit) {
+    while (SDL_PollEvent(&event)) {
+      if (event.type == SDL_QUIT) {
         quit = true;
       }
     }
@@ -61,7 +54,6 @@ int main() {
   SDL_DestroyRenderer(renderer);
   SDL_DestroyWindow(window);
   SDL_Quit();
-
   
   return 0;
 }

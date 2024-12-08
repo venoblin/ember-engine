@@ -31,10 +31,9 @@ int Window::run () {
   }
 
   bool quit = false;
-  SDL_Event event;
   while (!quit) {
-    while (SDL_PollEvent(&event)) {
-      if (event.type == SDL_QUIT) {
+    while (SDL_PollEvent(&this->event)) {
+      if (this->event.type == SDL_QUIT) {
         quit = true;
       }
     }
@@ -62,3 +61,5 @@ void Window::draw(Object obj) {
   SDL_SetRenderDrawColor(this->renderer, 255, 255, 255, 255);
   SDL_RenderDrawRect(this->renderer, &rect);
 }
+
+SDL_Event Window::getEvent() const { return this->event; }

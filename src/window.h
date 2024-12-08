@@ -18,6 +18,7 @@ class Window {
 
     int run();
     void draw(Object obj);
+    virtual void update();
 };
 
 #endif

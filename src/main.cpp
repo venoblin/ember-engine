@@ -1,17 +1,20 @@
 #include "window.h"
 #include "object.h"
 
-void update(SDL_Renderer* renderer) {
-  Object myObject(20, 50, 0, 0, 0);
-  SDL_Rect rect = myObject.getCollider();
+class EmberEngine : public Window {
+  public:
+    EmberEngine(const char* title, int width, int height) 
+    : Window(title, width, height) {} 
 
-  SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-  SDL_RenderDrawRect(renderer, &rect);
-}
+    void update() override {
+      Object obj(20, 50, 0, 0, 0);
+      
+      this->draw(obj);
+    }
+};
 
 int main() {
-  Window engine("EmberEngine", 640, 380);
+  EmberEngine engine("EmberEngine", 640, 380);
   engine.run();
-  
   return 0;
 }

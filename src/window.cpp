@@ -41,6 +41,8 @@ int Window::run () {
 
     SDL_RenderClear(this->renderer);
 
+    update();
+
     SDL_SetRenderDrawColor(this->renderer, 0, 0, 0, 255);
     SDL_RenderPresent(this->renderer);
   }
@@ -51,6 +53,8 @@ int Window::run () {
 
   return 0;
 }
+
+void Window::update() {}
 
 void Window::draw(Object obj) {
   SDL_Rect rect = obj.getCollider();

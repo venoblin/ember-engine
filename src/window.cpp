@@ -62,7 +62,6 @@ void Window::start() {}
 void Window::eventListener(SDL_Event event) {}
 void Window::update() {}
 
-
 void Window::draw(Object obj) {
   SDL_Rect rect = obj.getCollider();
 

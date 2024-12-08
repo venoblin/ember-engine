@@ -15,7 +15,28 @@ class EmberEngine : public Window {
     }
     
     void eventListener(SDL_Event event) override {
-
+      if (event.type == SDL_KEYDOWN) {
+        switch (event.key.keysym.sym) {
+          case SDLK_UP:
+            this->obj.setY(this->obj.getY() + 1);
+            std::cout << this->obj.getY() << std::endl;
+            break;
+          case SDLK_DOWN:
+            std::cout << "Down arrow key pressed" << std::endl;
+            break;
+          case SDLK_LEFT:
+            std::cout << "Left arrow key pressed" << std::endl;
+            break;
+          case SDLK_RIGHT:
+            std::cout << "Right arrow key pressed" << std::endl;
+            break;
+          case SDLK_ESCAPE:
+            // quit = true;
+            break;
+          default:
+            break;
+        }
+      }
     }
 
     void update() override {

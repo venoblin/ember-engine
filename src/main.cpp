@@ -2,9 +2,22 @@
 #include <string>
 #include <functional>
 
+SDL_Renderer* renderer;
+
 const char* title = "EmberEngine";
 int width = 640;
 int height = 380;
+
+void update() {
+  SDL_Rect rect;
+  rect.x = 250;
+  rect.y = 150;
+  rect.w = 200;
+  rect.h = 200;
+
+  SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+  SDL_RenderDrawRect(renderer, &rect);
+}
 
 int main() {
   int sdlInit = SDL_INIT_VIDEO;
@@ -17,7 +30,7 @@ int main() {
     height, 
     SDL_WINDOW_SHOWN
   );
-  SDL_Renderer* renderer = SDL_CreateRenderer(window, -1,  SDL_RENDERER_SOFTWARE);
+  renderer = SDL_CreateRenderer(window, -1,  SDL_RENDERER_SOFTWARE);
 
   if (sdlInit < 0) {
     SDL_Log("SDL could not initialize! SDL Error: %s", SDL_GetError());
@@ -45,10 +58,10 @@ int main() {
       }
     }
 
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    
     SDL_RenderClear(renderer);
+    update();
 
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderPresent(renderer);
   }
   

@@ -10,6 +10,7 @@ class Object {
     float x;
     float y;
     float z;
+    bool debugMode;
     SDL_Rect collider;
     
   public:

@@ -1,11 +1,16 @@
 #include "object.h"
 
-Object::Object(int width = 20, int height = 20, float x = 0, float y = 0, float z = 0) 
-: width(width), height(height), x(x), y(y), z(z) {
+Object::Object(
+  int width = 20, 
+  int height = 20, 
+  float x = 0, 
+  float y = 0, 
+  float z = 0) : width(width), height(height), x(x), y(y), z(z) {
   this->collider.w = width;
   this->collider.h = height;
   this->collider.x = x;
   this->collider.y = y;
+  this->debugMode = false;
 }
 
 void Object::setSize(int width, int height) {

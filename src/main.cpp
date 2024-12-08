@@ -7,7 +7,7 @@ class EmberEngine : public Window {
     : Window(title, width, height) {} 
 
     void update() override {
-      Object obj(20, 50, 0, 0, 0);
+      Object obj(20, 50, 50, 50, 0);
       
       this->draw(obj);
     }

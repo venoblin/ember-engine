@@ -3,13 +3,11 @@
 #include <functional>
 #include "object.h"
 
-SDL_Renderer* renderer;
+const char* windowTitle = "EmberEngine";
+int windowWidth = 640;
+int windowHeight = 380;
 
-const char* title = "EmberEngine";
-int width = 640;
-int height = 380;
-
-void update() {
+void update(SDL_Renderer* renderer) {
   Object myObject(20, 50, 0, 0, 0);
   SDL_Rect rect = myObject.getCollider();
 
@@ -21,14 +19,14 @@ int main() {
   int sdlInit = SDL_INIT_VIDEO;
   
   SDL_Window* window = SDL_CreateWindow(
-    title, 
+    windowTitle, 
     SDL_WINDOWPOS_UNDEFINED, 
     SDL_WINDOWPOS_UNDEFINED,  
-    width, 
-    height, 
+    windowWidth, 
+    windowHeight, 
     SDL_WINDOW_SHOWN
   );
-  renderer = SDL_CreateRenderer(window, -1,  SDL_RENDERER_SOFTWARE);
+  SDL_Renderer* renderer = SDL_CreateRenderer(window, -1,  SDL_RENDERER_SOFTWARE);
 
   if (sdlInit < 0) {
     SDL_Log("SDL could not initialize! SDL Error: %s", SDL_GetError());
@@ -57,7 +55,7 @@ int main() {
     }
 
     SDL_RenderClear(renderer);
-    update();
+    update(renderer);
 
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderPresent(renderer);

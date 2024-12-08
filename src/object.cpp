@@ -27,3 +27,4 @@ int Object::getHeight() const { return this->height; }
 float Object::getX() const { return this->x; }
 float Object::getY() const { return this->y; }
 float Object::getZ() const { return this->z; }
+SDL_Rect Object::getCollider() const { return this->collider; }

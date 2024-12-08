@@ -23,6 +23,7 @@ class Object {
     float getX() const;
     float getY() const;
     float getZ() const;
+    SDL_Rect getCollider() const;
 };
 
 #endif

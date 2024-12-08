@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
 #include <string>
 #include <functional>
+#include "object.h"
 
 SDL_Renderer* renderer;
 

@@ -11,6 +11,8 @@ class Object {
     float y;
     float z;
     SDL_Rect collider;
+
+    void updateCollider(int width, int height, float x, float y);
     
   public:
     Object();

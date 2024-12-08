@@ -19,16 +19,15 @@ class EmberEngine : public Window {
         switch (event.key.keysym.sym) {
           case SDLK_UP:
             this->obj.setY(this->obj.getY() + 1);
-            std::cout << this->obj.getY() << std::endl;
             break;
           case SDLK_DOWN:
-            std::cout << "Down arrow key pressed" << std::endl;
+            this->obj.setY(this->obj.getY() - 1);
             break;
           case SDLK_LEFT:
-            std::cout << "Left arrow key pressed" << std::endl;
+            this->obj.setX(this->obj.getX() - 1);
             break;
           case SDLK_RIGHT:
-            std::cout << "Right arrow key pressed" << std::endl;
+            this->obj.setX(this->obj.getX() + 1);
             break;
           case SDLK_ESCAPE:
             // quit = true;

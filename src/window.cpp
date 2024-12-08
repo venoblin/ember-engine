@@ -30,7 +30,7 @@ int Window::run() {
     return 1;
   }
 
-  start();
+  this->start();
 
   SDL_Event event;
   bool quit = false;
@@ -40,12 +40,12 @@ int Window::run() {
         quit = true;
       }
 
-      eventListener(event);
+      this->eventListener(event);
     }
 
     SDL_RenderClear(this->renderer);
 
-    update();
+    this->update();
 
     SDL_SetRenderDrawColor(this->renderer, 0, 0, 0, 255);
     SDL_RenderPresent(this->renderer);

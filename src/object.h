@@ -9,8 +9,6 @@ class Object {
     float _y;
     float _z;
   public:
-    Object();
-    Object(int width, int height);
     Object(int width, int height, float x, float y, float z);
 
     void setSize(int width, int height);

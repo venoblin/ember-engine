@@ -18,10 +18,10 @@ class EmberEngine : public Window {
       if (event.type == SDL_KEYDOWN) {
         switch (event.key.keysym.sym) {
           case SDLK_UP:
-            this->obj.setY(this->obj.getY() + 1);
+            this->obj.setY(this->obj.getY() - 1);
             break;
           case SDLK_DOWN:
-            this->obj.setY(this->obj.getY() - 1);
+            this->obj.setY(this->obj.getY() + 1);
             break;
           case SDLK_LEFT:
             this->obj.setX(this->obj.getX() - 1);

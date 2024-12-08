@@ -13,6 +13,7 @@ class Object {
     SDL_Rect collider;
     
   public:
+    Object();
     Object(int width, int height, float x, float y, float z);
 
     void setSize(int width, int height);

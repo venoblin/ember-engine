@@ -8,7 +8,6 @@ class Window {
   private:
     SDL_Window* window;
     SDL_Renderer* renderer;
-    SDL_Event event;
     int sdlInit;
     const char* title;
     int width;
@@ -19,9 +18,9 @@ class Window {
 
     int run();
     void draw(Object obj);
+    virtual void eventListener(SDL_Event event);
+    virtual void start();
     virtual void update();
-
-    SDL_Event getEvent() const;
 };
 
 #endif

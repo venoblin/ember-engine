@@ -1,5 +1,6 @@
 #include "object.h"
 
+Object::Object() : width(680), height(480), x(0), y(0), z(0) {}
 Object::Object(int width, int height, float x, float y, float z) 
 : width(width), height(height), x(x), y(y), z(z) {
   this->collider.w = width;

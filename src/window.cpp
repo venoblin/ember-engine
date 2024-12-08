@@ -14,7 +14,7 @@ Window::Window(const char* title, int width, int height)
   this->renderer = SDL_CreateRenderer(this->window, -1,  SDL_RENDERER_SOFTWARE);
 }
 
-int Window::run () {
+int Window::run() {
   if (this->sdlInit < 0) {
     SDL_Log("SDL could not initialize! SDL Error: %s", SDL_GetError());
     return 1;
@@ -30,12 +30,17 @@ int Window::run () {
     return 1;
   }
 
+  start();
+
+  SDL_Event event;
   bool quit = false;
   while (!quit) {
-    while (SDL_PollEvent(&this->event)) {
-      if (this->event.type == SDL_QUIT) {
+    while (SDL_PollEvent(&event)) {
+      if (event.type == SDL_QUIT) {
         quit = true;
       }
+
+      eventListener(event);
     }
 
     SDL_RenderClear(this->renderer);
@@ -53,7 +58,10 @@ int Window::run () {
   return 0;
 }
 
+void Window::start() {}
+void Window::eventListener(SDL_Event event) {}
 void Window::update() {}
+
 
 void Window::draw(Object obj) {
   SDL_Rect rect = obj.getCollider();
@@ -61,5 +69,3 @@ void Window::draw(Object obj) {
   SDL_SetRenderDrawColor(this->renderer, 255, 255, 255, 255);
   SDL_RenderDrawRect(this->renderer, &rect);
 }
-
-SDL_Event Window::getEvent() const { return this->event; }

@@ -22,9 +22,9 @@ class Object {
       this->z = z;
     }
 
-    int getWidth();
-    int getHeight();
-    float getX();
-    float getY();
-    float getZ();
+    int getWidth() const { return width; }
+    int getHeight() const { return height; }
+    float getX() const { return x; }
+    float getY() const { return y; }
+    float getZ() const { return z; }
 };

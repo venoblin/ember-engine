@@ -2,6 +2,7 @@
 #define WINDOW_H
 
 #include <SDL2/SDL.h>
+#include "object.h"
 
 class Window {
   private:
@@ -16,6 +17,7 @@ class Window {
     Window(const char* title, int width, int height);
 
     int run();
+    void draw(Object obj);
 };
 
 #endif

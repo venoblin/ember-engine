@@ -39,15 +39,22 @@ int Window::run () {
       }
     }
 
-    SDL_RenderClear(renderer);
+    SDL_RenderClear(this->renderer);
 
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_RenderPresent(renderer);
+    SDL_SetRenderDrawColor(this->renderer, 0, 0, 0, 255);
+    SDL_RenderPresent(this->renderer);
   }
   
-  SDL_DestroyRenderer(renderer);
-  SDL_DestroyWindow(window);
+  SDL_DestroyRenderer(this->renderer);
+  SDL_DestroyWindow(this->window);
   SDL_Quit();
 
   return 0;
+}
+
+void Window::draw(Object obj) {
+  SDL_Rect rect = obj.getCollider();
+
+  SDL_SetRenderDrawColor(this->renderer, 255, 255, 255, 255);
+  SDL_RenderDrawRect(this->renderer, &rect);
 }

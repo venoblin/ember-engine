@@ -17,6 +17,15 @@ void Object::setPosition(float x, float y, float z) {
   this->y = y;
   this->z = z;
 }
+void Object::setX(float x) {
+  this->x = x;
+}
+void Object::setY(float y) {
+  this->y = y;
+}
+void Object::setZ(float z) {
+  this->z = z;
+}
 
 int Object::getWidth() const { return this->width; }
 int Object::getHeight() const { return this->height; }

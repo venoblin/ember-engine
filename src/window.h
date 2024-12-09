@@ -5,7 +5,7 @@
 #include "object.h"
 
 class Window {
-  private:
+  protected:
     SDL_Window* window;
     SDL_Renderer* renderer;
     int sdlInit;

@@ -11,7 +11,7 @@ Window::Window(const char* title, int width, int height)
     height, 
     SDL_WINDOW_SHOWN
   );
-  this->renderer = SDL_CreateRenderer(this->window, -1,  SDL_RENDERER_SOFTWARE);
+  this->renderer = SDL_CreateRenderer(this->window, -1,  SDL_RENDERER_ACCELERATED);
 }
 
 int Window::run() {
